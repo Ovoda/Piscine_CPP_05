@@ -4,7 +4,7 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Form::Form( void ) : _min_signing_grade(0), _min_execution_grade(0) {
+Form::Form( void ) : _min_signing_grade(0), _min_execution_grade(0), _is_signed(false) {
 	// Shouldn't be used;
 }
 

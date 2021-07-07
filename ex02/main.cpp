@@ -10,7 +10,7 @@ int main(void)
 	Bureaucrat					employee("Employee", 150);
 	Bureaucrat					manager("Manager", 50);
 	Bureaucrat					boss("Boss", 1);
-	ShrubberyCreationForm		shrubbery_creation("file");
+	ShrubberyCreationForm		shrubbery_creation("../ex00");
 	RobotomyRequestForm			robotomyRequestForm("Your neighbour");
 	PresidentialPardonForm		PresidentialPardonForm("Your dog");
 

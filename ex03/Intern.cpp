@@ -59,6 +59,7 @@ AForm	*Intern::makeForm( std::string form_name, std::string target)
 		if (form_name == forms[i]->getName())
 		{
 			tmp = forms[i];
+			std::cout << "Intern creates " << forms[i]->getName() << std::endl;
 			break ;
 		}
 		i++; 

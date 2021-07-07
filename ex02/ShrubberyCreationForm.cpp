@@ -37,7 +37,8 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 	return *this;
 }
 
-std::ostream &operator<<(std::ostream &o, ShrubberyCreationForm const &i) {
+std::ostream &operator<<(std::ostream &o, ShrubberyCreationForm const &i)
+{
 	return (i.output(o));
 }
 
@@ -50,37 +51,40 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 	try
 	{
 		AForm::execute(executor);
-		std::ofstream ofile(_param);
-		if (ofile.fail())
+		std::ofstream ofile(_param.c_str());
+		if (ofile.bad())
 		{
 			std::cout << "Cannot open file" << std::endl;
 		}
-		ofile << "	            .        +          .      .          ." << std::endl;
-		ofile << "     .            _        .                    ." << std::endl;
-		ofile << "  ,              /;-._,-.____        ,-----.__" << std::endl;
-		ofile << " ((        .    (_:#::_.:::. `-._   /:, /-._, `._," << std::endl;
-		ofile << "  `                 \\   _|`\"=:_::.`.);  \\ __/ /" << std::endl;
-		ofile << "                      ,    `./  \\:. `.   )==-'  ." << std::endl;
-		ofile << "    .      ., ,-=-.  ,\\, +#./`   \\:.  / /           ." << std::endl;
-		ofile << ".           \\/:/`-' , ,\\ '` ` `   ): , /_  -o" << std::endl;
-		ofile << "       .    /:+- - + +- : :- + + -:'  /(o-) \\)     ." << std::endl;
-		ofile << "  .      ,=':  \\    ` `/` ' , , ,:' `'--\".--\"---._/`7" << std::endl;
-		ofile << "   `.   (    \\: \\,-._` ` + '\\, ,\"   _,--._,---\":.__/" << std::endl;
-		ofile << "              \\:  `  X` _| _,\\/'   .-'" << std::endl;
-		ofile << ".               \":._:`\\____  /:'  /      .           ." << std::endl;
-		ofile << "                    \\::.  :\\/:'  /              +" << std::endl;
-		ofile << "   .                 `.:.  /:'  }      ." << std::endl;
-		ofile << "           .           ):_(:;   \\           ." << std::endl;
-		ofile << "                      /:. _/ ,  |" << std::endl;
-		ofile << "                   . (|::.     ,`                  ." << std::endl;
-		ofile << "     .                |::.    {\\" << std::endl;
-		ofile << "                      |::.\\  \\ `." << std::endl;
-		ofile << "                      |:::(\\    |" << std::endl;
-		ofile << "              O       |:::/{ }  |                  (o" << std::endl;
-		ofile << "               )  ___/#\\::`/ (O \"==._____   O, (O  /`" << std::endl;
-		ofile << "          ~~~w/w~\"~~,\\` `:/,-(~`\"~~~~~~~~\"~o~\\~/~w|/~" << std::endl;
-		ofile << "dew   ~~~~~~~~~~~~~~~~~~~~~~~\\W~~~~~~~~~~~~\\|/~~" << std::endl;
-		ofile.close();
+		else
+		{
+			ofile << "	            .        +          .      .          ." << std::endl;
+			ofile << "     .            _        .                    ." << std::endl;
+			ofile << "  ,              /;-._,-.____        ,-----.__" << std::endl;
+			ofile << " ((        .    (_:#::_.:::. `-._   /:, /-._, `._," << std::endl;
+			ofile << "  `                 \\   _|`\"=:_::.`.);  \\ __/ /" << std::endl;
+			ofile << "                      ,    `./  \\:. `.   )==-'  ." << std::endl;
+			ofile << "    .      ., ,-=-.  ,\\, +#./`   \\:.  / /           ." << std::endl;
+			ofile << ".           \\/:/`-' , ,\\ '` ` `   ): , /_  -o" << std::endl;
+			ofile << "       .    /:+- - + +- : :- + + -:'  /(o-) \\)     ." << std::endl;
+			ofile << "  .      ,=':  \\    ` `/` ' , , ,:' `'--\".--\"---._/`7" << std::endl;
+			ofile << "   `.   (    \\: \\,-._` ` + '\\, ,\"   _,--._,---\":.__/" << std::endl;
+			ofile << "              \\:  `  X` _| _,\\/'   .-'" << std::endl;
+			ofile << ".               \":._:`\\____  /:'  /      .           ." << std::endl;
+			ofile << "                    \\::.  :\\/:'  /              +" << std::endl;
+			ofile << "   .                 `.:.  /:'  }      ." << std::endl;
+			ofile << "           .           ):_(:;   \\           ." << std::endl;
+			ofile << "                      /:. _/ ,  |" << std::endl;
+			ofile << "                   . (|::.     ,`                  ." << std::endl;
+			ofile << "     .                |::.    {\\" << std::endl;
+			ofile << "                      |::.\\  \\ `." << std::endl;
+			ofile << "                      |:::(\\    |" << std::endl;
+			ofile << "              O       |:::/{ }  |                  (o" << std::endl;
+			ofile << "               )  ___/#\\::`/ (O \"==._____   O, (O  /`" << std::endl;
+			ofile << "          ~~~w/w~\"~~,\\` `:/,-(~`\"~~~~~~~~\"~o~\\~/~w|/~" << std::endl;
+			ofile << "dew   ~~~~~~~~~~~~~~~~~~~~~~~\\W~~~~~~~~~~~~\\|/~~" << std::endl;
+			ofile.close();
+		}
 	}
 	catch (AForm::FormIsNotSigned &e)
 	{
