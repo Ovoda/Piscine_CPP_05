@@ -27,8 +27,8 @@ int main(void)
 	shrubbery_creation->execute(employee);
 	employee.signForm(*shrubbery_creation);
 	manager.signForm(*shrubbery_creation);
-	shrubbery_creation->execute(employee);
-	shrubbery_creation->execute(manager);
+	employee.executeForm(*shrubbery_creation);
+	manager.executeForm(*shrubbery_creation);
 	std::cout << std::endl << std::endl;
 
 	std::cout << "FORM 2 ROBOTOMY REQUEST FORM" << std::endl << std::endl;
@@ -36,8 +36,9 @@ int main(void)
 	robotomyRequestForm->execute(employee);
 	employee.signForm(*robotomyRequestForm);
 	manager.signForm(*robotomyRequestForm);
-	robotomyRequestForm->execute(manager);
-	robotomyRequestForm->execute(boss);
+	employee.executeForm(*robotomyRequestForm);
+	manager.executeForm(*robotomyRequestForm);
+	boss.executeForm(*robotomyRequestForm);
 	std::cout << std::endl << std::endl;
 
 	std::cout << "FORM 3 PRESIDENTIAL PARDON FORM" << std::endl << std::endl;
@@ -45,8 +46,9 @@ int main(void)
 	presidentialPardonForm->execute(employee);
 	manager.signForm(*presidentialPardonForm);
 	boss.signForm(*presidentialPardonForm);
-	presidentialPardonForm->execute(manager);
-	presidentialPardonForm->execute(boss);
+	manager.executeForm(*presidentialPardonForm);
+	boss.executeForm(*presidentialPardonForm);
+
 
 	delete presidentialPardonForm;
 	return (0);

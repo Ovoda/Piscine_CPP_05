@@ -50,6 +50,7 @@ void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 	try
 	{
 		AForm::execute(executor);
+		std::cout << executor.getName() << " executes " << getName() << std::endl;
 		std::cout << _param << " has been pardoned by Zafod Beeblebrox" << std::endl;
 	}
 	catch (AForm::FormIsNotSigned &e)

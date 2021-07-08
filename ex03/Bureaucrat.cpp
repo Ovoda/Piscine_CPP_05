@@ -57,7 +57,7 @@ void Bureaucrat::incrementGrade(void)
 	if (_grade > 1)
 		_grade -= 1;
 	else
-		std::cout << "Grade cannot be higher than 1" << std::endl;
+		throw grade_too_high_exception;
 }
 
 void Bureaucrat::decrementGrade(void)
@@ -65,8 +65,9 @@ void Bureaucrat::decrementGrade(void)
 	if (_grade < 150)
 		_grade += 1;
 	else
-		std::cout << "Grade cannot be lower than 150" << std::endl;
+		throw grade_too_low_exception;
 }
+
 
 void Bureaucrat::signForm(AForm &aform)
 {
@@ -80,6 +81,11 @@ void Bureaucrat::signForm(AForm &aform)
 		std::cout << _name << " cannot sign " << aform.getName()
 				  << " because his grade is too low" << std::endl;
 	}
+}
+
+void Bureaucrat::executeForm(AForm const &form)
+{
+	form.execute(*this);
 }
 
 /*

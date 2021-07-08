@@ -72,8 +72,6 @@ void		AForm::execute( Bureaucrat const & executor ) const {
 		throw form_is_not_signed;
 	else if (_is_signed == true && executor.getGrade() > _min_execution_grade)
 		throw grade_too_low_exception;
-	else
-		std::cout << executor.getName() << " executes " << getName() << std::endl;
 }
 
 std::ostream	&AForm::output( std::ostream & o ) const {

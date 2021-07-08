@@ -52,6 +52,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 	{
 		AForm::execute(executor);
 		std::ofstream ofile(_param.c_str());
+		std::cout << executor.getName() << " executes " << getName() << std::endl;
 		if (ofile.bad())
 		{
 			std::cout << "Cannot open file" << std::endl;

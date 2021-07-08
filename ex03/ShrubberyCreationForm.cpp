@@ -50,6 +50,8 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 	try
 	{
 		AForm::execute(executor);
+		std::cout << executor.getName() << " executes " << getName() << std::endl;
+
 		std::ofstream ofile(_param.c_str());
 		if (ofile.fail())
 		{
